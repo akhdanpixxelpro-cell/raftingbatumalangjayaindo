@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafting Batu Malang | Wisata Arung Jeram Pemula & Keluarga</title>
+    <title>Rafting Batu Malang | Wisata Arung Jeram Pemula &amp; Keluarga</title>
 
     <!-- SEO & Metadata -->
     <meta name="description"
@@ -29,10 +29,20 @@
         content="Petualangan rafting aman dan seru di Batu Malang. Cocok untuk pemula dan keluarga.">
     <meta property="twitter:image" content="https://baturaftingadventure.com/img/hero.jpg">
 
-    <!-- PageSpeed & Performance -->
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Google Fonts: preload critical fonts -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500&display=swap"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500&display=swap">
+    </noscript>
 
     <!-- Favicon & PWA -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -40,15 +50,419 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#2563eb">
 
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- FAQ Structured Data for SEO / AI Overview -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah saya perlu pengalaman rafting sebelumnya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak perlu sama sekali! Semua paket kami dirancang khusus untuk pemula. Sebelum berangkat, pemandu kami akan memberikan briefing lengkap tentang teknik mendayung, posisi aman di perahu, dan prosedur keselamatan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa batas usia minimum untuk rafting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usia minimum adalah 7 tahun untuk jalur Pujon (santai, cocok keluarga). Untuk jalur Kaliwatu yang lebih menantang, kami rekomendasikan minimal usia 12 tahun. Tidak ada batas usia maksimum selama kondisi kesehatan memungkinkan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa saja yang sudah termasuk dalam harga paket?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Harga sudah termasuk: pelampung & helm berstandar internasional, pemandu profesional bersertifikat, asuransi keselamatan, air mineral, dan foto digital kegiatan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah rafting aman saat musim hujan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keselamatan peserta adalah prioritas utama kami. Kami selalu memantau kondisi cuaca dan debit sungai secara real-time. Jika kondisi dianggap tidak aman, kegiatan akan dijadwalkan ulang tanpa biaya pembatalan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara memesan paket rafting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pemesanan sangat mudah! Hubungi kami langsung via WhatsApp di nomor +6282211221909. Tim kami siap membantu 7 hari seminggu pukul 07.00-20.00 WIB. Kami sarankan booking minimal H-1 agar persiapan lebih matang."
+          }
+        }
+      ]
+    }
+    </script>
 
-    <!-- JSON-LD Structured Data for AI Overview -->
+    <!-- Critical CSS inline -->
+    <style>
+        /* Critical above-the-fold CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent: #06b6d4;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, .7);
+            --text-white: #f8fafc;
+            --text-gray: #94a3b8;
+            --glass-border: rgba(255, 255, 255, .1);
+            --transition: all .3s ease
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition)
+        }
+
+        ul {
+            list-style: none
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition)
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer
+        }
+
+        .btn {
+            display: inline-block;
+            padding: .8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition)
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(15, 23, 42, .6), rgba(15, 23, 42, .6)), linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .glass {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            transition: border-color .3s ease
+        }
+
+        .faq-item.open {
+            border-color: var(--accent)
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--text-white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-align: left;
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: color .3s ease
+        }
+
+        .faq-question:hover {
+            color: var(--accent)
+        }
+
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(6, 182, 212, .15);
+            border: 1px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform .4s ease, background .3s ease
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            background: var(--accent)
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .45s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 400px
+        }
+
+        .faq-answer-inner {
+            padding: 0 2rem 1.5rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            font-size: .97rem
+        }
+
+        /* CTA Section */
+        .cta-section {
+            position: relative;
+            padding: 100px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, .18) 0%, rgba(6, 182, 212, .14) 100%);
+            z-index: 0;
+        }
+
+        .cta-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(6, 182, 212, .18) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: ctaPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes ctaPulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: .7;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.15);
+                opacity: 1;
+            }
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-inner h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff 30%, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-inner p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 560px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-wa {
+            background: linear-gradient(135deg, #25d366, #128c50);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform .3s ease, box-shadow .3s ease;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, .25);
+        }
+
+        .btn-cta-wa:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px rgba(37, 211, 102, .4);
+        }
+
+        .btn-cta-outline {
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            background: transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background .3s ease, color .3s ease, transform .3s ease;
+        }
+
+        .btn-cta-outline:hover {
+            background: var(--accent);
+            color: #0f172a;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 480px) {
+            .cta-inner h2 {
+                font-size: 2rem;
+            }
+
+            .cta-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-cta-wa,
+            .btn-cta-outline {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <!-- Main CSS (non-blocking for non-critical) -->
+    <link rel="preload" href="index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="index.css">
+    </noscript>
+
+    <!-- Font Awesome: loaded async (non-blocking) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </noscript>
+
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Gemilang Katun Outbound",
+      "name": "Batu Rafting Adventure",
       "image": "https://baturaftingadventure.com/img/hero.jpg",
       "description": "Penyedia jasa arung jeram terbaik di Batu Malang untuk pemula.",
       "address": {
@@ -76,16 +490,17 @@
     <nav id="navbar">
         <div class="container">
             <a href="index.html" class="logo">Batu<span style="color:#fff">Rafting</span></a>
-            <div class="menu-toggle" id="menuToggle">
+            <div class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi" role="button" tabindex="0">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About & Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li class="mobile-cta"><a href="https://wa.me/6282211221909" class="btn btn-primary"
-                        style="color:white;">Book Now</a></li>
+                        style="color:white;" rel="noopener noreferrer">Book Now</a></li>
             </ul>
-            <a href="https://wa.me/6282211221909" class="btn btn-primary">Book Now</a>
+            <a href="https://wa.me/6282211221909" class="btn btn-primary" rel="noopener noreferrer">Book Now</a>
         </div>
     </nav>
 
@@ -109,17 +524,17 @@
             </div>
             <div class="grid">
                 <div class="card glass">
-                    <i class="fas fa-user-shield"></i>
-                    <h3>Pemanu Ahli</h3>
+                    <i class="fas fa-user-shield" aria-hidden="true"></i>
+                    <h3>Pemandu Ahli</h3>
                     <p>Pemandu bersertifikat yang akan menemani dan menjaga keselamatan Anda sepanjang jalan.</p>
                 </div>
                 <div class="card glass">
-                    <i class="fas fa-life-ring"></i>
+                    <i class="fas fa-life-ring" aria-hidden="true"></i>
                     <h3>Alat Standar Int.</h3>
                     <p>Semua perlengkapan mulai dari pelampung hingga helm mengikuti standar keamanan dunia.</p>
                 </div>
                 <div class="card glass">
-                    <i class="fas fa-mountain"></i>
+                    <i class="fas fa-mountain" aria-hidden="true"></i>
                     <h3>View Memukau</h3>
                     <p>Melewati rute dengan pemandangan tebing dan hutan pinus yang menenangkan jiwa.</p>
                 </div>
@@ -135,7 +550,7 @@
             </div>
             <div class="grid">
                 <div class="card glass" style="padding:0; overflow:hidden;">
-                    <img src="img/package1.jpg" alt="Pujon Rafting Paket Keluarga" loading="lazy"
+                    <img src="img/12.webp" alt="Pujon Rafting Paket Keluarga" loading="lazy" width="600" height="200"
                         style="width:100%; height:200px; object-fit:cover;">
                     <div style="padding:2rem">
                         <h3>Pujon Rafting</h3>
@@ -145,8 +560,8 @@
                     </div>
                 </div>
                 <div class="card glass" style="padding:0; overflow:hidden;">
-                    <img src="img/package2.jpg" alt="Kaliwatu Rafting Adventure Malang" loading="lazy"
-                        style="width:100%; height:200px; object-fit:cover;">
+                    <img src="img/23 (1).webp" alt="Kaliwatu Rafting Adventure Malang" loading="lazy" width="600"
+                        height="200" style="width:100%; height:200px; object-fit:cover;">
                     <div style="padding:2rem">
                         <h3>Kaliwatu Rafting</h3>
                         <p style="margin:1rem 0; color:var(--text-gray)">Petualangan seru dengan arus sedang yang
@@ -158,12 +573,116 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pertanyaan yang Sering Ditanyakan</h2>
+                <p>Temukan jawaban atas pertanyaan umum seputar rafting di Batu Malang.</p>
+            </div>
+            <div class="faq-wrapper" style="max-width:800px;margin:0 auto;">
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Apakah saya perlu pengalaman rafting sebelumnya?
+                        <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            Tidak perlu sama sekali! Semua paket kami dirancang khusus untuk pemula. Sebelum berangkat,
+                            pemandu kami akan memberikan briefing lengkap tentang teknik mendayung, posisi aman di
+                            perahu, dan prosedur keselamatan. Anda hanya perlu semangat dan keberanian!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Berapa batas usia minimum untuk rafting?
+                        <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            Usia minimum adalah <strong>7 tahun</strong> untuk jalur Pujon (santai, cocok keluarga).
+                            Untuk jalur Kaliwatu yang lebih menantang, kami rekomendasikan minimal usia <strong>12
+                                tahun</strong>. Tidak ada batas usia maksimum selama kondisi kesehatan memungkinkan.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Apa saja yang sudah termasuk dalam harga paket?
+                        <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            Harga sudah termasuk: pelampung &amp; helm berstandar internasional, pemandu profesional
+                            bersertifikat, asuransi keselamatan, air mineral, dan foto digital kegiatan. Anda hanya
+                            perlu membawa baju ganti dan semangat petualangan!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Apakah rafting aman saat musim hujan?
+                        <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            Keselamatan peserta adalah prioritas utama kami. Kami selalu memantau kondisi cuaca dan
+                            debit sungai secara real-time. Jika kondisi dianggap tidak aman, kegiatan akan dijadwalkan
+                            ulang tanpa biaya pembatalan. Kami tidak pernah beroperasi dalam kondisi berbahaya.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Bagaimana cara memesan paket rafting?
+                        <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            Pemesanan sangat mudah! Klik tombol <strong>Book Now</strong> di halaman ini untuk
+                            menghubungi kami langsung via WhatsApp. Tim kami siap membantu 7 hari seminggu pukul
+                            07.00–20.00 WIB. Kami sarankan booking minimal <strong>H-1</strong> agar persiapan lebih
+                            matang.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <div class="container cta-inner">
+            <h2>Siap Merasakan Serunya Arung Jeram?</h2>
+            <p>Jangan tunda petualangan impianmu! Hubungi kami sekarang dan dapatkan konsultasi paket rafting <strong
+                    style="color:var(--accent)">GRATIS</strong> sesuai kebutuhanmu.</p>
+            <div class="cta-btns">
+                <a href="https://wa.me/6282211221909?text=Halo%2C%20saya%20ingin%20booking%20paket%20rafting%20Batu%20Malang"
+                    target="_blank" rel="noopener noreferrer" class="btn-cta-wa">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Chat WhatsApp Sekarang
+                </a>
+                <a href="#packages" class="btn-cta-outline">
+                    <i class="fas fa-map-marked-alt" aria-hidden="true"></i> Lihat Semua Paket
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Floating Buttons -->
-    <a href="https://wa.me/6282211221909" class="floating-btn btn-wa" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/6282211221909" class="floating-btn btn-wa" target="_blank" rel="noopener noreferrer"
+        aria-label="Hubungi via WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
-    <button id="scrollTop" class="floating-btn btn-scroll">
-        <i class="fas fa-chevron-up"></i>
+    <button id="scrollTop" class="floating-btn btn-scroll" aria-label="Kembali ke atas">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
     <footer>
@@ -171,9 +690,9 @@
             <div class="logo">Batu<span>Rafting</span></div>
             <p style="margin-top:1rem; color:var(--text-gray)">Jl. Raya Wisata No. 123, Batu, Jawa Timur</p>
             <div class="footer-socials">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" aria-label="Instagram Batu Rafting"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook Batu Rafting"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" aria-label="WhatsApp Batu Rafting"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
             </div>
             <p>&copy; 2026 Batu Rafting Adventure. All rights reserved.</p>
         </div>
@@ -185,19 +704,19 @@
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
 
+        // Scroll listener dengan passif agar lebih cepat
         window.addEventListener('scroll', function () {
             if (window.scrollY > 50) {
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
             }
-
             if (window.scrollY > 300) {
                 scrollBtn.classList.add('active');
             } else {
                 scrollBtn.classList.remove('active');
             }
-        });
+        }, { passive: true });
 
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -224,6 +743,30 @@
 
         scrollBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                // Tutup semua item
+                document.querySelectorAll('.faq-item').forEach(el => {
+                    el.classList.remove('open');
+                    el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                // Buka item yang diklik (jika tadinya tertutup)
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Lazy-load hero image setelah halaman load
+        window.addEventListener('load', function () {
+            const hero = document.querySelector('.hero');
+            hero.style.backgroundImage = "linear-gradient(rgba(15,23,42,.6),rgba(15,23,42,.6)), url('img/hero.jpg'), linear-gradient(135deg,#0f172a 0%,#1e293b 100%)";
         });
     </script>
 </body>

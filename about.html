@@ -4,34 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang & Blog | Batu Rafting Adventure</title>
+    <title>Tentang Kami | Batu Rafting Adventure</title>
 
     <!-- SEO & Metadata -->
     <meta name="description"
-        content="Pelajari sejarah Batu Rafting Adventure dan dapatkan tips arung jeram terbaik untuk pemula di Malang.">
+        content="Kenali lebih dekat Batu Rafting Adventure — penyedia jasa arung jeram terpercaya di Batu Malang sejak lama. Kami hadir untuk memastikan pengalaman rafting yang aman dan berkesan.">
     <link rel="canonical" href="https://baturaftingadventure.com/about.html">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://baturaftingadventure.com/about.html">
-    <meta property="og:title" content="Tentang & Blog | Batu Rafting Adventure">
-    <meta property="og:description" content="Sejarah kami dan kumpulan tips rafting untuk pemula.">
-    <meta property="og:image" content="https://baturaftingadventure.com/img/package1.jpg">
+    <meta property="og:title" content="Tentang Kami | Batu Rafting Adventure">
+    <meta property="og:description"
+        content="Kenali lebih dekat Batu Rafting Adventure, penyedia jasa rafting terpercaya di Batu Malang.">
+    <meta property="og:image" content="https://baturaftingadventure.com/img/hero.jpg">
 
-    <!-- PageSpeed & Performance -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Google Fonts non-blocking -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500&display=swap"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500&display=swap">
+    </noscript>
 
     <!-- Favicon & PWA -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
 
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- JSON-LD for Blog/Articles -->
+    <!-- JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -39,105 +48,372 @@
       "mainEntity": {
         "@type": "Organization",
         "name": "Batu Rafting Adventure",
-        "description": "Penyedia jasa arung jeram di Batu Malang."
+        "description": "Penyedia jasa arung jeram terbaik di Batu Malang untuk pemula dan keluarga."
       }
     }
     </script>
+
+    <!-- CSS non-blocking -->
+    <link rel="preload" href="index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="index.css">
+    </noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </noscript>
+
+    <style>
+        /* Critical inline */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --primary: #2563eb;
+            --accent: #06b6d4;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, .7);
+            --text-white: #f8fafc;
+            --text-gray: #94a3b8;
+            --glass-border: rgba(255, 255, 255, .1);
+            --transition: all .3s ease
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition)
+        }
+
+        ul {
+            list-style: none
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: rgba(15, 23, 42, .97);
+            backdrop-filter: blur(10px)
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer
+        }
+
+        .btn {
+            display: inline-block;
+            padding: .8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition)
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white
+        }
+
+        /* Value Cards */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem
+        }
+
+        .value-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: .3s ease
+        }
+
+        .value-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-6px)
+        }
+
+        .value-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block
+        }
+
+        .value-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: .5rem
+        }
+
+        .value-card p {
+            font-size: .9rem;
+            color: var(--text-gray)
+        }
+
+        /* Stats */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem
+        }
+
+        .stat-box strong {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif
+        }
+
+        .stat-box span {
+            font-size: .85rem;
+            color: var(--text-gray)
+        }
+
+        @media(max-width:768px) {
+            nav .btn-primary {
+                display: none
+            }
+
+            .menu-toggle {
+                display: block;
+                order: 2
+            }
+
+            .logo {
+                order: 1
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 280px;
+                height: 100vh;
+                background: rgba(15, 23, 42, .98);
+                backdrop-filter: blur(30px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transform: translateX(100%);
+                transition: transform .6s cubic-bezier(.85, 0, .15, 1);
+                z-index: 2000;
+                border-left: 1px solid var(--glass-border);
+                padding: 3rem 1rem
+            }
+
+            .nav-links.active {
+                transform: translateX(0)
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+                opacity: 0;
+                transform: translateX(30px);
+                transition: all .5s ease
+            }
+
+            .nav-links.active li {
+                opacity: 1;
+                transform: translateX(0)
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                display: block;
+                padding: 1rem;
+                border-radius: 8px;
+                color: white;
+                border-bottom: 1px solid rgba(255, 255, 255, .05)
+            }
+
+            .nav-links li.mobile-cta {
+                display: block;
+                margin-top: 2rem;
+                padding: 0 1rem
+            }
+
+            .nav-links li.mobile-cta .btn {
+                width: 100%;
+                text-align: center;
+                background: linear-gradient(135deg, var(--primary), var(--accent))
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <nav id="navbar" class="scrolled">
+    <nav id="navbar">
         <div class="container">
             <a href="index.html" class="logo">Batu<span style="color:#fff">Rafting</span></a>
-            <div class="menu-toggle" id="menuToggle">
+            <div class="menu-toggle" id="menuToggle" aria-label="Buka menu" role="button" tabindex="0">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About & Blog</a></li>
+                <li><a href="about.html" style="color:var(--accent)">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li class="mobile-cta"><a href="https://wa.me/6282211221909" class="btn btn-primary"
-                        style="color:white;">Book Now</a></li>
+                        style="color:white;" rel="noopener noreferrer">Book Now</a></li>
             </ul>
-            <a href="https://wa.me/6282211221909" class="btn btn-primary">Book Now</a>
+            <a href="https://wa.me/6282211221909" class="btn btn-primary" rel="noopener noreferrer">Book Now</a>
         </div>
     </nav>
 
     <header class="about-hero">
         <div class="container">
-            <h1>Tentang & <span style="color:var(--accent)">Blog</span></h1>
-            <p>Mengenal lebih dekat keseruan arung jeram di Malang bersama Gemilang Katun Outbound.</p>
+            <h1>Tentang <span style="color:var(--accent)">Kami</span></h1>
+            <p>Mengenal lebih dekat tim dan semangat di balik petualangan rafting terbaik di Batu Malang.</p>
         </div>
     </header>
 
     <section>
         <div class="container content-wrapper">
-            <article class="glass" style="padding:2rem; margin-bottom:3rem">
-                <h3>Cerita Kami</h3>
-                <p>Gemilang Katun Outbound hadir dari kecintaan kami pada alam Malang. Kami menyadari bahwa banyak
-                    orang ingin mencoba arung jeram tapi merasa takut karena belum pernah mencoba.</p>
-                <p style="margin-top:1rem">Misi kami adalah menyediakan pengalaman rafting yang aman, edukatif, dan
-                    menyenangkan bagi semua orang, terutama bagi mereka yang baru pertama kali menyentuh dayung.</p>
+
+            <!-- Cerita Kami -->
+            <article class="glass" style="padding:2.5rem; margin-bottom:3rem">
+                <h3 style="color:var(--accent); margin-bottom:1rem; font-size:1.4rem">Cerita Kami</h3>
+                <p>Batu Rafting Adventure hadir dari kecintaan kami pada alam Malang yang luar biasa. Berawal dari
+                    sebuah perahu karet dan tekad kuat, kami tumbuh menjadi penyedia layanan arung jeram terpercaya yang
+                    telah menemani ribuan petualang dari seluruh Indonesia.</p>
+                <p style="margin-top:1rem">Kami percaya bahwa alam bukan hanya untuk dinikmati, tapi juga untuk dijaga.
+                    Setiap perjalanan bersama kami bukan sekadar olahraga — tapi sebuah pengalaman yang membangun
+                    keberanian, mempererat kebersamaan, dan menanamkan rasa cinta pada alam.</p>
+                <p style="margin-top:1rem">Misi kami adalah menyediakan pengalaman rafting yang <strong
+                        style="color:var(--accent)">aman, edukatif, dan menyenangkan</strong> bagi semua orang —
+                    terutama bagi mereka yang baru pertama kali menyentuh dayung.</p>
             </article>
 
-            <div class="section-title">
-                <h2>Rafting Batu Malang Pemula</h2>
-                <p>Baca panduan ini agar petualangan pertama Anda berkesan.</p>
+            <!-- Stats -->
+            <div class="stats-row">
+                <div class="stat-box">
+                    <strong>5.000+</strong>
+                    <span>Peserta Puas</span>
+                </div>
+                <div class="stat-box">
+                    <strong>8+</strong>
+                    <span>Tahun Pengalaman</span>
+                </div>
+                <div class="stat-box">
+                    <strong>2</strong>
+                    <span>Jalur Rafting</span>
+                </div>
+                <div class="stat-box">
+                    <strong>100%</strong>
+                    <span>Tingkat Keamanan</span>
+                </div>
             </div>
 
-            <article class="glass" style="padding:2rem" data-link="blog-1.html">
-                <h3>1. Corporate Gathering yang Anti Membosankan</h3>
-                <div class="blog-meta">Diposting oleh Gemilang Katun Outbound</div>
-                <p>WA: 0822-1122-1909 - Pilihan favorit banyak perusahaan yang ingin mengadakan kegiatan gathering
-                    dengan nuansa berbeda.</p>
-                <a href="blog-1.html" class="btn glass" style="margin-top:1rem; display:inline-block">Baca Selengkapnya
-                    &rarr;</a>
-            </article>
+            <!-- Nilai Kami -->
+            <div class="section-title" style="text-align:center; margin-bottom:2rem">
+                <h2>Nilai-Nilai Kami</h2>
+                <p style="color:var(--text-gray)">Prinsip yang selalu kami pegang dalam setiap perjalanan.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                    <h4>Keselamatan Utama</h4>
+                    <p>Protokol keamanan ketat diterapkan di setiap sesi rafting tanpa kompromi.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-heart" aria-hidden="true"></i>
+                    <h4>Pelayanan Tulus</h4>
+                    <p>Setiap tamu diperlakukan seperti keluarga — dengan hangat dan penuh perhatian.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-leaf" aria-hidden="true"></i>
+                    <h4>Cinta Alam</h4>
+                    <p>Kami berkomitmen menjaga kelestarian sungai dan lingkungan sekitar.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <h4>Profesionalisme</h4>
+                    <p>Pemandu bersertifikat dengan pengalaman bertahun-tahun di lapangan.</p>
+                </div>
+            </div>
 
-            <article class="glass" style="padding:2rem; margin-top:2rem" data-link="blog-2.html">
-                <h3>2. Ide Liburan Keluarga yang Aman dan Berkesan</h3>
-                <div class="blog-meta">Diposting oleh Gemilang Katun Outbound</div>
-                <p>WA: 0822-1122-1909 - Rafting batu malang untuk pemula sebagai alternatif liburan keluarga yang lebih
-                    aktif dan berkesan.</p>
-                <a href="blog-2.html" class="btn glass" style="margin-top:1rem; display:inline-block">Baca Selengkapnya
-                    &rarr;</a>
-            </article>
-
-            <article class="glass" style="padding:2rem; margin-top:2rem" data-link="blog-3.html">
-                <h3>3. Panorama Alam yang Menenangkan</h3>
-                <div class="blog-meta">Diposting oleh Gemilang Katun Outbound</div>
-                <p>WA: 0822-1122-1909 - Menikmati keindahan alam yang menenangkan di sepanjang aliran sungai Kota Batu
-                    sambil melepas stres.</p>
-                <a href="blog-3.html" class="btn glass" style="margin-top:1rem; display:inline-block">Baca Selengkapnya
-                    &rarr;</a>
-            </article>
-
-            <article class="glass" style="padding:2rem; margin-top:2rem" data-link="blog-4.html">
-                <h3>4. Program Team Building Efektif</h3>
-                <div class="blog-meta">Diposting oleh Gemilang Katun Outbound</div>
-                <p>WA: 0822-1122-1909 - Melatih kerja sama tim secara langsung melalui media pembelajaran rafting yang
-                    seru.</p>
-                <a href="blog-4.html" class="btn glass" style="margin-top:1rem; display:inline-block">Baca Selengkapnya
-                    &rarr;</a>
-            </article>
-
-            <article class="glass" style="padding:2rem; margin-top:2rem" data-link="blog-5.html">
-                <h3>5. Paket Wisata Seru Sekaligus Edukatif</h3>
-                <div class="blog-meta">Diposting oleh Gemilang Katun Outbound</div>
-                <p>WA: 0822-1122-1909 - Sarana edukasi tentang keberanian dan kerja sama melalui pengalaman rafting yang
-                    menyenangkan.</p>
-                <a href="blog-5.html" class="btn glass" style="margin-top:1rem; display:inline-block">Baca Selengkapnya
-                    &rarr;</a>
-            </article>
         </div>
     </section>
 
     <!-- Floating Buttons -->
-    <a href="https://wa.me/6282211221909" class="floating-btn btn-wa" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/6282211221909" class="floating-btn btn-wa" target="_blank" rel="noopener noreferrer"
+        aria-label="Hubungi via WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
-    <button id="scrollTop" class="floating-btn btn-scroll">
-        <i class="fas fa-chevron-up"></i>
+    <button id="scrollTop" class="floating-btn btn-scroll" aria-label="Kembali ke atas">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
     <footer>
@@ -145,9 +421,9 @@
             <div class="logo">Batu<span>Rafting</span></div>
             <p style="margin-top:1rem; color:var(--text-gray)">Jl. Raya Wisata No. 123, Batu, Jawa Timur</p>
             <div class="footer-socials">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" aria-label="Instagram Batu Rafting"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook Batu Rafting"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" aria-label="WhatsApp Batu Rafting"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
             </div>
             <p>&copy; 2026 Batu Rafting Adventure. All rights reserved.</p>
         </div>
@@ -159,12 +435,8 @@
         const navLinks = document.getElementById('navLinks');
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollBtn.classList.add('active');
-            } else {
-                scrollBtn.classList.remove('active');
-            }
-        });
+            scrollBtn.classList.toggle('active', window.scrollY > 300);
+        }, { passive: true });
 
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -189,17 +461,9 @@
             }
         });
 
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Interactive Cards
-        document.querySelectorAll('article.glass[data-link]').forEach(card => {
-            card.addEventListener('click', () => {
-                window.location.href = card.getAttribute('data-link');
-            });
-        });
+        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     </script>
+
 </body>
 
 </html>

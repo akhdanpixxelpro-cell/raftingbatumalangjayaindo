@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500&display=swap');
+/* Google Fonts dimuat via HTML preload untuk performa lebih baik */
 
 :root {
-    font-display: swap;
     --primary: #2563eb;
     --primary-dark: #1d4ed8;
     --accent: #06b6d4;
@@ -144,13 +143,12 @@ nav .container {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)),
-        url('img/hero.jpg'),
-        linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    min-height: 100vh;
+    /* background image dimuat via JS setelah halaman load untuk performa */
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    /* background-attachment: fixed dihapus — menyebabkan repaint mahal di mobile */
     display: flex;
     align-items: center;
     text-align: center;
