@@ -14,10 +14,12 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Rafting Batu Malang Pemula: Wisata Baru Edukatif">
     <meta property="og:description" content="Edukasi keberanian dan kerja sama melalui arung jeram di Kota Batu.">
-    <meta property="og:image" content="https://baturaftingadventure.com/img/package2.jpg">
+    <meta property="og:image" content="https://baturaftingadventure.com/img/23 (1).webp">
 
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap"
+        rel="stylesheet">
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
@@ -29,6 +31,412 @@
       "author": { "@type": "Organization", "name": "Gemilang Katun Outbound" }
     }
     </script>
+
+    <style>
+        .post-body {
+            line-height: 1.9;
+            font-size: 1.05rem;
+            color: #cbd5e1;
+        }
+
+        .post-body p {
+            margin-bottom: 1.4rem;
+        }
+
+        .post-body h2 {
+            font-size: 1.5rem;
+            color: #f8fafc;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(6, 182, 212, 0.3);
+        }
+
+        .toc-box {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .toc-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--accent);
+            user-select: none;
+            gap: 1rem;
+        }
+
+        .toc-header span {
+            flex: 1;
+        }
+
+        .toc-header .toc-icon {
+            transition: transform 0.3s ease;
+            font-size: 0.85rem;
+        }
+
+        .toc-header.open .toc-icon {
+            transform: rotate(180deg);
+        }
+
+        .toc-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s ease-out, padding 0.3s ease;
+        }
+
+        .toc-content.active {
+            max-height: 500px;
+            padding-top: 1rem;
+        }
+
+        .toc-content ol {
+            padding-left: 1.4rem;
+            margin: 0;
+        }
+
+        .toc-content ol li {
+            margin: 0.5rem 0;
+        }
+
+        .toc-content ol li a {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .toc-content ol li a:hover {
+            color: var(--accent);
+        }
+
+        .baca-juga {
+            margin: 2rem 0;
+            padding: 1rem 1.2rem;
+            border-left: 4px solid var(--accent);
+            background: rgba(6, 182, 212, 0.07);
+            border-radius: 0 0.5rem 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        .baca-juga .label {
+            font-weight: 800;
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .baca-juga a {
+            color: #f8fafc;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .baca-juga a:hover {
+            color: var(--accent);
+        }
+
+        blockquote {
+            margin: 2.5rem 0;
+            padding: 1.5rem 2rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(6, 182, 212, 0.08));
+            border-left: 5px solid var(--accent);
+            border-radius: 0 1rem 1rem 0;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: #e2e8f0;
+            position: relative;
+        }
+
+        blockquote::before {
+            content: '\201C';
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.35;
+            position: absolute;
+            top: -0.5rem;
+            left: 1rem;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        blockquote p {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        figure {
+            margin: 2.5rem 0;
+            text-align: center;
+        }
+
+        figure img {
+            border-radius: 0.75rem;
+            max-width: 100%;
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            display: block;
+        }
+
+        figcaption {
+            font-size: 0.82rem;
+            color: #64748b;
+            margin-top: 0.6rem;
+            font-style: italic;
+        }
+
+        .faq-section {
+            margin: 3rem 0;
+        }
+
+        .faq-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: #f8fafc;
+        }
+
+        .faq-item {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 0.75rem;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .faq-question {
+            cursor: pointer;
+            padding: 1.1rem 1.4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.97rem;
+            color: #f8fafc;
+            user-select: none;
+            transition: background 0.25s;
+            gap: 1rem;
+        }
+
+        .faq-question:hover {
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        .faq-question span {
+            flex: 1;
+        }
+
+        .faq-question .faq-icon {
+            font-size: 0.85rem;
+            color: var(--accent);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .faq-question.open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 300px;
+            padding: 0 1.4rem 1.2rem;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .author-profile {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            margin-top: 3rem;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+            border-radius: 1rem;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.3rem;
+            color: var(--accent);
+            font-size: 1.05rem;
+        }
+
+        .author-info .author-title {
+            font-size: 0.82rem;
+            color: #64748b;
+            margin-bottom: 0.4rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin: 0;
+        }
+
+        .share-section {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            text-align: center;
+        }
+
+        .share-section p {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #f8fafc;
+        }
+
+        .share-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 0.6rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .share-wa {
+            background: #25d366;
+        }
+
+        .share-fb {
+            background: #1877f2;
+        }
+
+        .share-tw {
+            background: #1da1f2;
+        }
+
+        .share-tg {
+            background: #229ed9;
+        }
+
+        .related {
+            margin-top: 3rem;
+        }
+
+        .related h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: #f8fafc;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .related-card {
+            display: block;
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(6, 182, 212, 0.12);
+        }
+
+        .related-card h4 {
+            font-size: 0.95rem;
+            color: var(--accent);
+            margin-bottom: 0.4rem;
+        }
+
+        .related-card p {
+            font-size: 0.82rem;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .contact-cta {
+            margin: 2rem 0;
+            padding: 1.2rem 1.5rem;
+            border-left: 4px solid var(--accent);
+            background: rgba(6, 182, 212, 0.08);
+            border-radius: 0 0.75rem 0.75rem 0;
+        }
+
+        @media (max-width: 640px) {
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            figure img {
+                height: 220px;
+            }
+
+            blockquote {
+                padding: 1.2rem 1.2rem;
+            }
+
+            blockquote p {
+                padding-left: 1rem;
+            }
+
+            .author-profile {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -36,12 +444,13 @@
     <nav id="navbar" class="scrolled">
         <div class="container">
             <a href="index.html" class="logo">Batu<span style="color:#fff">Rafting</span></a>
-            <div class="menu-toggle" id="menuToggle">
+            <div class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About & Blog</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
                 <li class="mobile-cta"><a href="https://wa.me/6282211221909" class="btn btn-primary"
                         style="color:white;">Book Now</a></li>
             </ul>
@@ -52,36 +461,84 @@
     <header class="about-hero" style="padding-top: 120px; padding-bottom: 30px;">
         <div class="container content-wrapper">
             <h1>Wisata <span style="color:var(--accent)">Edukatif</span> Seru</h1>
-            <div class="blog-meta">Diposting oleh Gemilang Katun Outbound • WA: 0822-1122-1909</div>
+            <div class="blog-meta">
+                <i class="fas fa-user-circle" style="color:var(--accent)"></i> Gemilang Katun Outbound &nbsp;•&nbsp;
+                <i class="fas fa-calendar-alt" style="color:var(--accent)"></i> Februari 2026 &nbsp;•&nbsp;
+                <i class="fas fa-phone-alt" style="color:var(--accent)"></i> WA: 0822-1122-1909
+            </div>
         </div>
     </header>
 
-    <section style="padding-top: 20px;">
+    <section style="padding-top: 20px; padding-bottom: 60px;">
         <div class="container content-wrapper">
-
             <div class="post-body">
+
+                <!-- Gambar Utama (Atas) -->
+                <figure>
+                    <img src="img/23 (1).webp" alt="Wisata edukatif rafting Batu Malang untuk sekolah dan komunitas"
+                        loading="lazy">
+                    <figcaption>Peserta rafting dari berbagai komunitas dan sekolah belajar keberanian dan kerja sama di
+                        alam terbuka Batu Malang.</figcaption>
+                </figure>
+
+                <!-- Table of Contents -->
+                <div class="toc-box">
+                    <div class="toc-header" id="tocToggle" onclick="toggleToc()">
+                        <i class="fas fa-list-ul" style="color:var(--accent)"></i>
+                        <span>Daftar Isi Artikel</span>
+                        <i class="fas fa-chevron-down toc-icon"></i>
+                    </div>
+                    <div class="toc-content" id="tocContent">
+                        <ol>
+                            <li><a href="#intro">Rafting sebagai Sarana Edukasi Modern</a></li>
+                            <li><a href="#nilai">Nilai Pembelajaran dari Rafting</a></li>
+                            <li><a href="#program">Program Edukatif Gemilang Katun</a></li>
+                            <li><a href="#akses">Akses Mudah & Fasilitas Lengkap</a></li>
+                            <li><a href="#faq">FAQ - Pertanyaan Umum</a></li>
+                        </ol>
+                    </div>
+                </div>
+
                 <p><strong>WA: 0822-1122-1909 - Rafting Batu Malang untuk Pemula, Paket Wisata Seru Sekaligus
                         Edukatif</strong></p>
 
-                <p>(Hub: 0822-1122-1909) Rafting batu malang untuk pemula kini tidak hanya menjadi aktivitas wisata,
+                <p id="intro">(Hub: 0822-1122-1909) Rafting batu malang untuk pemula kini tidak hanya menjadi aktivitas
+                    wisata,
                     tetapi juga sarana edukasi yang menyenangkan. Banyak sekolah, komunitas, hingga instansi memilih
                     kegiatan ini untuk memberikan pengalaman baru yang bermanfaat.</p>
 
+                <!-- Baca Juga -->
                 <div class="baca-juga">
-                    <span>BACA JUGA:</span>
-                    <a href="blog-1.html">Rafting: Pilihan Corporate Gathering Anti Membosankan</a>
+                    <span class="label">Baca Juga</span>
+                    <a href="blog-1.html">Rafting: Pilihan Corporate Gathering Anti Membosankan di Batu Malang</a>
                 </div>
+
+                <h2 id="nilai">Nilai Pembelajaran dari Rafting</h2>
 
                 <p>Melalui rafting, peserta belajar tentang keberanian, kerja sama, dan cara menghadapi tantangan. Semua
                     dilakukan dalam suasana yang menyenangkan, sehingga tidak terasa seperti kegiatan formal.</p>
 
                 <blockquote>
-                    "Belajar di alam terbuka memberikan retensi pemahaman yang lebih dalam daripada di dalam ruangan."
+                    <p>Belajar di alam terbuka memberikan retensi pemahaman yang lebih dalam daripada di dalam ruangan.
+                    </p>
                 </blockquote>
+
+                <h2 id="program">Program Edukatif Gemilang Katun</h2>
 
                 <p>Gemilang Katun Outbound memiliki pengalaman menangani berbagai program edukatif berbasis paket
                     outbound. Kami merancang kegiatan yang tidak hanya seru, tetapi juga memiliki nilai pembelajaran
                     yang jelas.</p>
+
+                <!-- Gambar Bawah -->
+                <figure>
+                    <img src="img/12.webp"
+                        alt="Sesi rafting edukatif untuk pelajar di sungai Batu Malang - belajar sambil bermain"
+                        loading="lazy">
+                    <figcaption>Generasi muda belajar tentang alam, keberanian, dan solidaritas melalui pengalaman
+                        rafting yang dipandu profesional.</figcaption>
+                </figure>
+
+                <h2 id="akses">Akses Mudah & Fasilitas Lengkap</h2>
 
                 <p>Salah satu keunggulan rafting di Batu Malang adalah akses lokasi yang mudah dan fasilitas yang
                     lengkap. Setelah rafting, peserta bisa melanjutkan kegiatan wisata ke berbagai destinasi populer
@@ -97,60 +554,129 @@
                 <p>Rafting batu malang untuk pemula adalah pilihan tepat bagi Anda yang ingin wisata sekaligus belajar
                     dengan cara yang menyenangkan.</p>
 
-                <p
-                    style="margin-top: 2rem; padding: 1rem; border-left: 4px solid var(--accent); background: rgba(6, 182, 212, 0.1);">
+                <div class="contact-cta">
                     <strong>Gemilang Katun Outbound</strong><br>
-                    No WA : 0822-1122-1909
-                </p>
+                    📞 No WA : 0822-1122-1909 — Konsultasikan paket wisata edukatif untuk sekolah atau komunitas Anda!
+                </div>
+
+                <!-- FAQ -->
+                <div class="faq-section" id="faq">
+                    <h2>FAQ — Pertanyaan yang Sering Diajukan</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Apakah rafting cocok untuk kegiatan sekolah atau pramuka?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sangat cocok! Rafting mengajarkan nilai-nilai penting seperti keberanian, kepercayaan
+                                diri, kerja sama, dan kepemimpinan — semua relevan untuk perkembangan karakter siswa.
+                                Kami menyesuaikan jalur dan program sesuai usia dan kebutuhan sekolah.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Apakah ada sesi debriefing/refleksi setelah rafting?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ya! Untuk paket wisata edukatif, kami menyertakan sesi refleksi kelompok setelah rafting.
+                                Fasilitator kami akan memandu diskusi tentang pengalaman, nilai-nilai yang didapat, dan
+                                bagaimana menerapkannya dalam kehidupan sehari-hari.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Bisakah rafting dikombinasikan dengan kunjungan wisata lain?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Tentu! Kami menyediakan paket kombinasi yang mencakup rafting + kunjungan ke Jatim Park,
+                                Museum Angkut, atau berbagai destinasi wisata Batu Malang lainnya. Kami juga bisa
+                                membantu mengatur transportasi dan akomodasi sesuai kebutuhan.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Apakah ada sertifikat atau kenang-kenangan untuk peserta?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ya! Kami menyediakan sertifikat partisipasi untuk setiap peserta, serta dokumentasi foto
+                                dan video yang bisa dijadikan kenang-kenangan berharga dari pengalaman rafting pertama
+                                mereka.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Author Profile -->
                 <div class="author-profile">
-                    <div class="author-img"></div>
+                    <div class="author-avatar">
+                        <i class="fas fa-water"></i>
+                    </div>
                     <div class="author-info">
                         <h4>Gemilang Katun Outbound</h4>
-                        <p>Partner terpercaya untuk kebutuhan Outbound, Rafting, dan Wisata Edukasi di Malang Raya.</p>
+                        <div class="author-title">Tim Penulis & Fasilitator Wisata Edukasi Profesional</div>
+                        <p>Partner terpercaya untuk kebutuhan Outbound, Rafting, dan Wisata Edukasi di Malang Raya.
+                            Dipercaya oleh ratusan sekolah dan komunitas se-Jawa Timur.</p>
                     </div>
                 </div>
 
                 <!-- Social Share -->
                 <div class="share-section">
-                    <p>Bagikan artikel ini:</p>
+                    <p><i class="fas fa-share-alt" style="color:var(--accent)"></i> Bagikan artikel ini ke
+                        teman-temanmu:</p>
                     <div class="share-links">
-                        <a href="https://wa.me/?text=Rafting Batu Malang Pemula: Wisata Edukatif Seru - 082211221909"
-                            class="share-btn share-wa" target="_blank">
+                        <a href="https://wa.me/?text=Wisata%20Edukatif%20Rafting%20Batu%20Malang%20yang%20Seru!%20https%3A%2F%2Fbaturaftingadventure.com%2Fblog-5.html"
+                            class="share-btn share-wa" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
-                        <a href="#" class="share-btn share-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
-                        <a href="#" class="share-btn share-tw"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbaturaftingadventure.com%2Fblog-5.html"
+                            class="share-btn share-fb" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?text=Wisata%20Edukatif%20Seru%20dengan%20Rafting%20Batu%20Malang!&url=https%3A%2F%2Fbaturaftingadventure.com%2Fblog-5.html"
+                            class="share-btn share-tw" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://t.me/share/url?url=https%3A%2F%2Fbaturaftingadventure.com%2Fblog-5.html&text=Wisata%20Edukatif%20Rafting%20Batu%20Malang"
+                            class="share-btn share-tg" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-telegram-plane"></i> Telegram
+                        </a>
                     </div>
                 </div>
 
+                <!-- Related Articles -->
                 <div class="related">
-                    <h3>Artikel Terkait</h3>
-                    <div class="grid" style="margin-top: 1rem;">
-                        <a href="blog-1.html" class="card glass" style="padding:1.5rem;">
-                            <h4>Corporate Gathering</h4>
-                            <p style="font-size:0.9rem">Pilihan gathering yang seru...</p>
+                    <h3>Artikel Terkait Lainnya</h3>
+                    <div class="related-grid">
+                        <a href="blog-1.html" class="related-card">
+                            <h4><i class="fas fa-briefcase" style="margin-right:0.4rem"></i>Corporate Gathering</h4>
+                            <p>Pilihan gathering corporate yang seru dan tidak membosankan.</p>
                         </a>
-                        <a href="blog-2.html" class="card glass" style="padding:1.5rem;">
-                            <h4>Liburan Keluarga</h4>
-                            <p style="font-size:0.9rem">Ide liburan keluarga aman...</p>
+                        <a href="blog-2.html" class="related-card">
+                            <h4><i class="fas fa-users" style="margin-right:0.4rem"></i>Liburan Keluarga</h4>
+                            <p>Ide liburan keluarga aman dan berkesan di Batu Malang.</p>
                         </a>
-                        <a href="blog-4.html" class="card glass" style="padding:1.5rem;">
-                            <h4>Team Building</h4>
-                            <p style="font-size:0.9rem">Meningkatkan kekompakan tim...</p>
+                        <a href="blog-4.html" class="related-card">
+                            <h4><i class="fas fa-handshake" style="margin-right:0.4rem"></i>Team Building</h4>
+                            <p>Meningkatkan kekompakan tim melalui rafting yang seru dan bermakna.</p>
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Floating Buttons -->
-    <a href="https://wa.me/6282211221909" class="floating-btn btn-wa" target="_blank">
+    <a href="https://wa.me/6282211221909" class="floating-btn btn-wa" target="_blank" aria-label="Chat WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <button id="scrollTop" class="floating-btn btn-scroll">
+    <button id="scrollTop" class="floating-btn btn-scroll" aria-label="Scroll ke atas">
         <i class="fas fa-chevron-up"></i>
     </button>
 
@@ -170,7 +696,6 @@
             menuToggle.querySelector('i').classList.toggle('fa-bars');
             menuToggle.querySelector('i').classList.toggle('fa-times');
         });
-
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -178,7 +703,6 @@
                 menuToggle.querySelector('i').className = 'fas fa-bars';
             });
         });
-
         document.addEventListener('click', (e) => {
             if (!navLinks.contains(e.target) && !menuToggle.contains(e.target) && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
@@ -191,9 +715,20 @@
             if (window.scrollY > 300) scrollBtn.classList.add('active');
             else scrollBtn.classList.remove('active');
         });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        scrollBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        function toggleToc() {
+            const content = document.getElementById('tocContent');
+            const header = document.getElementById('tocToggle');
+            content.classList.toggle('active');
+            header.classList.toggle('open');
+        }
+        function toggleFaq(el) {
+            const answer = el.nextElementSibling;
+            document.querySelectorAll('.faq-question').forEach(q => { if (q !== el) q.classList.remove('open'); });
+            document.querySelectorAll('.faq-answer').forEach(a => { if (a !== answer) a.classList.remove('active'); });
+            el.classList.toggle('open');
+            answer.classList.toggle('active');
+        }
     </script>
 </body>
 
